@@ -1,0 +1,415 @@
+{
+  "generated_utc": "2026-10-17T21:15:10.673962+00:00",
+  "random_seed": 42,
+  "sklearn_version": "1.8.0",
+  "xgboost_version": "3.1.3",
+  "python_version": "3.13.16",
+  "datasets": {
+    "bank": {
+      "label": "Bank customer churn",
+      "selected_model": "XGBoost",
+      "numeric": [
+        "CreditScore",
+        "Age",
+        "Tenure",
+        "Balance",
+        "NumOfProducts",
+        "HasCrCard",
+        "IsActiveMember",
+        "EstimatedSalary"
+      ],
+      "categorical": [
+        "Geography"
+      ],
+      "features": [
+        "CreditScore",
+        "Age",
+        "Tenure",
+        "Balance",
+        "NumOfProducts",
+        "HasCrCard",
+        "IsActiveMember",
+        "EstimatedSalary",
+        "Geography"
+      ],
+      "excluded_columns": [
+        "CustomerId",
+        "Surname"
+      ],
+      "categorical_choices": {
+        "Geography": [
+          "France",
+          "Germany",
+          "Spain"
+        ]
+      },
+      "defaults": {
+        "CreditScore": 653.0,
+        "Age": 37.0,
+        "Tenure": 5.0,
+        "Balance": 97452.79500000001,
+        "NumOfProducts": 1.0,
+        "HasCrCard": 1.0,
+        "IsActiveMember": 1.0,
+        "EstimatedSalary": 99482.98,
+        "Geography": "France"
+      },
+      "threshold": 0.425,
+      "training_rows": 6400,
+      "validation_rows": 1600,
+      "test_rows": 2000,
+      "audit": {
+        "original_rows": 10002,
+        "duplicate_rows_removed": 2,
+        "rows_after_deduplication": 10000,
+        "positive_rate": 0.2037,
+        "feature_missing_counts": {
+          "CreditScore": 0,
+          "Age": 1,
+          "Tenure": 0,
+          "Balance": 0,
+          "NumOfProducts": 0,
+          "HasCrCard": 1,
+          "IsActiveMember": 1,
+          "EstimatedSalary": 0,
+          "Geography": 1
+        },
+        "sha256_first12": "8c8d77064a1c"
+      },
+      "validation_metrics": {
+        "roc_auc": 0.85564,
+        "pr_auc": 0.68442,
+        "balanced_accuracy": 0.77889,
+        "precision": 0.44915,
+        "recall": 0.81288,
+        "f1": 0.5786,
+        "f2": 0.69958,
+        "confusion_matrix": [
+          [
+            949,
+            325
+          ],
+          [
+            61,
+            265
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.9396039603960396,
+            "recall": 0.7448979591836735,
+            "f1-score": 0.8309982486865148,
+            "support": 1274.0
+          },
+          "1": {
+            "precision": 0.4491525423728814,
+            "recall": 0.8128834355828221,
+            "f1-score": 0.5786026200873362,
+            "support": 326.0
+          },
+          "accuracy": 0.75875,
+          "macro avg": {
+            "precision": 0.6943782513844605,
+            "recall": 0.7788906973832478,
+            "f1-score": 0.7048004343869255,
+            "support": 1600.0
+          },
+          "weighted avg": {
+            "precision": 0.8396744839738212,
+            "recall": 0.75875,
+            "f1-score": 0.7795726393594322,
+            "support": 1600.0
+          }
+        }
+      },
+      "test_metrics": {
+        "roc_auc": 0.85784,
+        "pr_auc": 0.70287,
+        "balanced_accuracy": 0.77449,
+        "precision": 0.44016,
+        "recall": 0.81327,
+        "f1": 0.57118,
+        "f2": 0.69538,
+        "confusion_matrix": [
+          [
+            1172,
+            421
+          ],
+          [
+            76,
+            331
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.9391025641025641,
+            "recall": 0.7357187696170747,
+            "f1-score": 0.825061598028863,
+            "support": 1593.0
+          },
+          "1": {
+            "precision": 0.4401595744680851,
+            "recall": 0.8132678132678133,
+            "f1-score": 0.5711820534943917,
+            "support": 407.0
+          },
+          "accuracy": 0.7515,
+          "macro avg": {
+            "precision": 0.6896310692853246,
+            "recall": 0.774493291442444,
+            "f1-score": 0.6981218257616273,
+            "support": 2000.0
+          },
+          "weighted avg": {
+            "precision": 0.8375676657119476,
+            "recall": 0.7515,
+            "f1-score": 0.7733971107160982,
+            "support": 2000.0
+          }
+        }
+      },
+      "deployment_status": "demonstration",
+      "model_size_mb": 0.037,
+      "validation_model_comparison": [
+        {
+          "dataset": "bank",
+          "model": "XGBoost",
+          "validation_pr_auc": 0.68442,
+          "validation_roc_auc": 0.85564,
+          "tuning": "6x3 CV"
+        },
+        {
+          "dataset": "bank",
+          "model": "Random forest",
+          "validation_pr_auc": 0.68408,
+          "validation_roc_auc": 0.86424,
+          "tuning": "none"
+        },
+        {
+          "dataset": "bank",
+          "model": "Logistic regression",
+          "validation_pr_auc": 0.45514,
+          "validation_roc_auc": 0.75422,
+          "tuning": "none"
+        }
+      ]
+    },
+    "telecom": {
+      "label": "Telecom customer churn",
+      "selected_model": "XGBoost",
+      "numeric": [
+        "SeniorCitizen",
+        "tenure",
+        "MonthlyCharges",
+        "TotalCharges"
+      ],
+      "categorical": [
+        "Partner",
+        "Dependents",
+        "PhoneService",
+        "InternetService",
+        "Contract",
+        "PaymentMethod"
+      ],
+      "features": [
+        "SeniorCitizen",
+        "tenure",
+        "MonthlyCharges",
+        "TotalCharges",
+        "Partner",
+        "Dependents",
+        "PhoneService",
+        "InternetService",
+        "Contract",
+        "PaymentMethod"
+      ],
+      "excluded_columns": [
+        "customerID"
+      ],
+      "categorical_choices": {
+        "Partner": [
+          "No",
+          "Yes"
+        ],
+        "Dependents": [
+          "No",
+          "Yes"
+        ],
+        "PhoneService": [
+          "No",
+          "Yes"
+        ],
+        "InternetService": [
+          "DSL",
+          "Fiber optic",
+          "No"
+        ],
+        "Contract": [
+          "Month-to-month",
+          "One year",
+          "Two year"
+        ],
+        "PaymentMethod": [
+          "Bank transfer",
+          "Credit card",
+          "Electronic check",
+          "Mailed check"
+        ]
+      },
+      "defaults": {
+        "SeniorCitizen": 1.0,
+        "tenure": 37.0,
+        "MonthlyCharges": 70.26,
+        "TotalCharges": 2161.52,
+        "Partner": "Yes",
+        "Dependents": "No",
+        "PhoneService": "No",
+        "InternetService": "No",
+        "Contract": "Month-to-month",
+        "PaymentMethod": "Credit card"
+      },
+      "threshold": 0.1,
+      "training_rows": 3763,
+      "validation_rows": 941,
+      "test_rows": 1176,
+      "audit": {
+        "original_rows": 5880,
+        "duplicate_rows_removed": 0,
+        "rows_after_deduplication": 5880,
+        "positive_rate": 0.49286,
+        "feature_missing_counts": {
+          "SeniorCitizen": 0,
+          "tenure": 0,
+          "MonthlyCharges": 0,
+          "TotalCharges": 0,
+          "Partner": 0,
+          "Dependents": 0,
+          "PhoneService": 0,
+          "InternetService": 0,
+          "Contract": 0,
+          "PaymentMethod": 0
+        },
+        "sha256_first12": "5fa48a8d1aa1"
+      },
+      "validation_metrics": {
+        "roc_auc": 0.49782,
+        "pr_auc": 0.49893,
+        "balanced_accuracy": 0.5,
+        "precision": 0.49309,
+        "recall": 1.0,
+        "f1": 0.6605,
+        "f2": 0.82946,
+        "confusion_matrix": [
+          [
+            0,
+            477
+          ],
+          [
+            0,
+            464
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 477.0
+          },
+          "1": {
+            "precision": 0.49309245483528164,
+            "recall": 1.0,
+            "f1-score": 0.6604982206405694,
+            "support": 464.0
+          },
+          "accuracy": 0.49309245483528164,
+          "macro avg": {
+            "precision": 0.24654622741764082,
+            "recall": 0.5,
+            "f1-score": 0.3302491103202847,
+            "support": 941.0
+          },
+          "weighted avg": {
+            "precision": 0.24314016901548424,
+            "recall": 0.49309245483528164,
+            "f1-score": 0.3256866890299938,
+            "support": 941.0
+          }
+        }
+      },
+      "test_metrics": {
+        "roc_auc": 0.47952,
+        "pr_auc": 0.4709,
+        "balanced_accuracy": 0.5,
+        "precision": 0.4932,
+        "recall": 1.0,
+        "f1": 0.66059,
+        "f2": 0.82952,
+        "confusion_matrix": [
+          [
+            0,
+            596
+          ],
+          [
+            0,
+            580
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 596.0
+          },
+          "1": {
+            "precision": 0.4931972789115646,
+            "recall": 1.0,
+            "f1-score": 0.6605922551252847,
+            "support": 580.0
+          },
+          "accuracy": 0.4931972789115646,
+          "macro avg": {
+            "precision": 0.2465986394557823,
+            "recall": 0.5,
+            "f1-score": 0.33029612756264237,
+            "support": 1176.0
+          },
+          "weighted avg": {
+            "precision": 0.24324355592577165,
+            "recall": 0.4931972789115646,
+            "f1-score": 0.3258023026978445,
+            "support": 1176.0
+          }
+        }
+      },
+      "deployment_status": "research_only_low_signal",
+      "model_size_mb": 0.02,
+      "validation_model_comparison": [
+        {
+          "dataset": "telecom",
+          "model": "XGBoost",
+          "validation_pr_auc": 0.49893,
+          "validation_roc_auc": 0.49782,
+          "tuning": "6x3 CV"
+        },
+        {
+          "dataset": "telecom",
+          "model": "Logistic regression",
+          "validation_pr_auc": 0.48094,
+          "validation_roc_auc": 0.49748,
+          "tuning": "none"
+        },
+        {
+          "dataset": "telecom",
+          "model": "Random forest",
+          "validation_pr_auc": 0.47485,
+          "validation_roc_auc": 0.47279,
+          "tuning": "none"
+        }
+      ]
+    }
+  },
+  "decision_rule": "maximize validation F2 (recall-weighted), after selecting by validation PR AUC",
+  "probability_warning": "Scores are uncalibrated model probabilities; not validated as true churn probabilities."
+}

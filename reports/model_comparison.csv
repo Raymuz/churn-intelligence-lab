@@ -1,0 +1,7 @@
+dataset,model,validation_pr_auc,validation_roc_auc,tuning
+bank,XGBoost,0.68442,0.85564,6x3 CV
+bank,Random forest,0.68408,0.86424,none
+bank,Logistic regression,0.45514,0.75422,none
+telecom,XGBoost,0.49893,0.49782,6x3 CV
+telecom,Logistic regression,0.48094,0.49748,none
+telecom,Random forest,0.47485,0.47279,none

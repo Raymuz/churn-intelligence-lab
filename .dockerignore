@@ -1,0 +1,9 @@
+__pycache__
+.ipynb_checkpoints
+*.pyc
+.git
+churn_inputs/
+bank_customer_churn*.csv
+customer_churn_data*.csv
+.env
+**/.env
