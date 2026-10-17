@@ -1,0 +1,9 @@
+{
+  "portfolio": true,
+  "slug": "churn-intelligence-lab",
+  "title": "Churn Intelligence Lab",
+  "description": "Banking customer churn prediction, model evaluation, Gradio and FastAPI deployment.",
+  "category": "Machine Learning",
+  "tags": ["XGBoost", "FastAPI", "Gradio", "Docker"],
+  "hf_space": "raymuz/Customer_Churn_Intelligence_Lab"
+}
